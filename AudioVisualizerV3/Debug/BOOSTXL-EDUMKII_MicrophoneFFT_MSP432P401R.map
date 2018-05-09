@@ -1,0 +1,603 @@
+******************************************************************************
+                  TI ARM Linker PC v18.1.1                     
+******************************************************************************
+>> Linked Mon Apr 30 12:53:47 2018
+
+OUTPUT FILE NAME:   <BOOSTXL-EDUMKII_MicrophoneFFT_MSP432P401R.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00034f35
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  MAIN                  00000000   00040000  00035208  0000adf8  R  X
+  INFO                  00200000   00004000  00000000  00004000  R  X
+  SRAM_CODE             01000000   00010000  00000000  00010000  RW X
+  SRAM_DATA             20000000   00010000  00001e51  0000e1af  RW  
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00035208   00035208    r-x
+  00000000    00000000    00000144   00000144    r-- .intvecs
+  00000144    00000144    00033370   00033370    r-- .const
+  000334b4    000334b4    00001cf4   00001cf4    r-x .text
+  000351a8    000351a8    00000060   00000060    r-- .cinit
+20000000    20000000    00001c54   00000000    rw-
+  20000000    20000000    00001c09   00000000    rw- .bss
+  20001c0c    20001c0c    00000048   00000000    rw- .data
+2000fe00    2000fe00    00000200   00000000    rw-
+  2000fe00    2000fe00    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    00000144     
+                  00000000    00000144     msp432_startup_ccs.obj (.intvecs)
+
+.const     0    00000144    00033370     
+                  00000144    00008000     dsplib-msp432.lib : arm_common_tables.obj (.const:twiddleCoef_4096)
+                  00008144    00006000                       : arm_common_tables.obj (.const:twiddleCoef_4096_q31)
+                  0000e144    00004000                       : arm_rfft_init_q15.obj (.const:realCoefAQ15)
+                  00012144    00004000                       : arm_rfft_init_q15.obj (.const:realCoefBQ15)
+                  00016144    00004000                       : arm_common_tables.obj (.const:twiddleCoef_2048)
+                  0001a144    00003000                       : arm_common_tables.obj (.const:twiddleCoef_2048_q31)
+                  0001d144    00003000                       : arm_common_tables.obj (.const:twiddleCoef_4096_q15)
+                  00020144    00002000                       : arm_common_tables.obj (.const:twiddleCoef_1024)
+                  00022144    00001f80                       : arm_common_tables.obj (.const:armBitRevIndexTable4096)
+                  000240c4    00001f80                       : arm_common_tables.obj (.const:armBitRevIndexTable_fixed_4096)
+                  00026044    00001dc0                       : arm_common_tables.obj (.const:armBitRevIndexTable2048)
+                  00027e04    00001800                       : arm_common_tables.obj (.const:twiddleCoef_1024_q31)
+                  00029604    00001800                       : arm_common_tables.obj (.const:twiddleCoef_2048_q15)
+                  0002ae04    00001000                       : arm_common_tables.obj (.const:twiddleCoef_512)
+                  0002be04    00000f80                       : arm_common_tables.obj (.const:armBitRevIndexTable_fixed_2048)
+                  0002cd84    00000e10                       : arm_common_tables.obj (.const:armBitRevIndexTable1024)
+                  0002db94    00000c00                       : arm_common_tables.obj (.const:twiddleCoef_1024_q15)
+                  0002e794    00000c00                       : arm_common_tables.obj (.const:twiddleCoef_512_q31)
+                  0002f394    00000800                       : arm_common_tables.obj (.const:twiddleCoef_256)
+                  0002fb94    000007c0                       : arm_common_tables.obj (.const:armBitRevIndexTable_fixed_1024)
+                  00030354    00000600                       : arm_common_tables.obj (.const:twiddleCoef_256_q31)
+                  00030954    00000600                       : arm_common_tables.obj (.const:twiddleCoef_512_q15)
+                  00030f54    00000400                       : arm_common_tables.obj (.const:twiddleCoef_128)
+                  00031354    000003c0                       : arm_common_tables.obj (.const:armBitRevIndexTable_fixed_512)
+                  00031714    00000380                       : arm_common_tables.obj (.const:armBitRevIndexTable512)
+                  00031a94    00000370                       : arm_common_tables.obj (.const:armBitRevIndexTable256)
+                  00031e04    00000300                       : arm_common_tables.obj (.const:twiddleCoef_128_q31)
+                  00032104    00000300                       : arm_common_tables.obj (.const:twiddleCoef_256_q15)
+                  00032404    00000200                       : arm_common_tables.obj (.const:twiddleCoef_64)
+                  00032604    000001e0                       : arm_common_tables.obj (.const:armBitRevIndexTable_fixed_256)
+                  000327e4    000001b0                       : arm_const_structs.obj (.const)
+                  00032994    000001a0                       : arm_common_tables.obj (.const:armBitRevIndexTable128)
+                  00032b34    00000180                       : arm_common_tables.obj (.const:twiddleCoef_128_q15)
+                  00032cb4    00000180                       : arm_common_tables.obj (.const:twiddleCoef_64_q31)
+                  00032e34    00000100                       : arm_common_tables.obj (.const:twiddleCoef_32)
+                  00032f34    000000e0                       : arm_common_tables.obj (.const:armBitRevIndexTable_fixed_128)
+                  00033014    000000c0                       : arm_common_tables.obj (.const:twiddleCoef_32_q31)
+                  000330d4    000000c0                       : arm_common_tables.obj (.const:twiddleCoef_64_q15)
+                  00033194    00000080                       : arm_common_tables.obj (.const:twiddleCoef_16)
+                  00033214    00000070                       : arm_common_tables.obj (.const:armBitRevIndexTable64)
+                  00033284    00000070                       : arm_common_tables.obj (.const:armBitRevIndexTable_fixed_64)
+                  000332f4    00000060                       : arm_common_tables.obj (.const:armBitRevIndexTable32)
+                  00033354    00000060                       : arm_common_tables.obj (.const:twiddleCoef_16_q31)
+                  000333b4    00000060                       : arm_common_tables.obj (.const:twiddleCoef_32_q15)
+                  00033414    00000030                       : arm_common_tables.obj (.const:armBitRevIndexTable_fixed_32)
+                  00033444    00000030                       : arm_common_tables.obj (.const:twiddleCoef_16_q15)
+                  00033474    00000028                       : arm_common_tables.obj (.const:armBitRevIndexTable16)
+                  0003349c    00000018                       : arm_common_tables.obj (.const)
+
+.text      0    000334b4    00001cf4     
+                  000334b4    0000033c     dsplib-msp432.lib : arm_cfft_radix4_q15.obj (.text:arm_radix4_butterfly_inverse_q15)
+                  000337f0    0000033c                       : arm_cfft_radix4_q15.obj (.text:arm_radix4_butterfly_q15)
+                  00033b2c    000001b6     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_add_t2.asm.obj (.text)
+                  00033ce2    00000002     msp432_startup_ccs.obj (.text:defaultISR)
+                  00033ce4    00000194     main.obj (.text:main)
+                  00033e78    0000018a     pcm.obj (.text:__PCM_setPowerStateAdvanced)
+                  00034002    000000fc     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_mul_t2.asm.obj (.text)
+                  000340fe    00000002     msp432_startup_ccs.obj (.text:faultISR)
+                  00034100    000000e4     pcm.obj (.text:__PCM_setPowerModeAdvanced)
+                  000341e4    000000e0     cs.obj (.text:CS_initClockSignal)
+                  000342c4    000000dc     dsplib-msp432.lib : arm_rfft_q15.obj (.text:arm_split_rfft_q15)
+                  000343a0    000000c4                       : arm_rfft_init_q15.obj (.text:arm_rfft_init_q15)
+                  00034464    000000c0                       : arm_bitreversal2.obj (.text)
+                  00034524    000000ba                       : arm_cfft_q15.obj (.text:arm_cfft_q15)
+                  000345de    00000002     msp432_startup_ccs.obj (.text:nmiISR)
+                  000345e0    000000b4     rtsv7M4_T_le_v4SPD16_eabi.lib : s_cosf.c.obj (.text:cosf)
+                  00034694    000000b0     pcm.obj (.text:__PCM_setCoreVoltageLevelAdvanced)
+                  00034744    000000a8     main.obj (.text:ADC14_IRQHandler)
+                  000347ec    000000a4     dsplib-msp432.lib : arm_cfft_q15.obj (.text:arm_cfft_radix4by2_inverse_q15)
+                  00034890    000000a4                       : arm_cfft_q15.obj (.text:arm_cfft_radix4by2_q15)
+                  00034934    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  000349d0    00000086     periph_config.obj (.text:configureADC)
+                  00034a56    0000007e     dsplib-msp432.lib : arm_rfft_q15.obj (.text:arm_split_rifft_q15)
+                  00034ad4    0000007c     periph_config.obj (.text:configureGPIO)
+                  00034b50    0000007a     dsplib-msp432.lib : arm_max_q15.obj (.text:arm_max_q15)
+                  00034bca    0000007a     rtsv7M4_T_le_v4SPD16_eabi.lib : memset_t2.asm.obj (.text)
+                  00034c44    00000078     pcm.obj (.text:PCM_gotoLPM3)
+                  00034cbc    0000006e     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_tos_t2.asm.obj (.text)
+                  00034d2a    0000006c     dsplib-msp432.lib : arm_rfft_q15.obj (.text:arm_rfft_q15)
+                  00034d96    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00034dfe    00000052     periph_config.obj (.text:configureClocks)
+                  00034e50    00000050     gpio.obj (.text:GPIO_setAsPeripheralModuleFunctionInputPin)
+                  00034ea0    00000050     pcm.obj (.text:PCM_shutdownDevice)
+                  00034ef0    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00034f34    00000038                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  00034f6c    00000038                                   : fs_tod_t2.asm.obj (.text)
+                  00034fa4    0000002c     pcm.obj (.text:PCM_getCoreVoltageLevel)
+                  00034fd0    0000002a     pcm.obj (.text:PCM_getPowerMode)
+                  00034ffa    00000002     --HOLE-- [fill = 0]
+                  00034ffc    00000028     flash.obj (.text:FlashCtl_setWaitState)
+                  00035024    00000028     pcm.obj (.text:PCM_gotoLPM0)
+                  0003504c    00000028     rtsv7M4_T_le_v4SPD16_eabi.lib : e_sqrtf.c.obj (.text:sqrtf)
+                  00035074    00000024     cs.obj (.text:CS_setDCOCenteredFrequency)
+                  00035098    00000024     gpio.obj (.text:GPIO_setAsOutputPin)
+                  000350bc    00000024     rtc_c.obj (.text:RTC_C_holdClock)
+                  000350e0    00000020     rtsv7M4_T_le_v4SPD16_eabi.lib : u_tofd_t2.asm.obj (.text)
+                  00035100    00000018     gpio.obj (.text:GPIO_setOutputLowOnPin)
+                  00035118    00000018     wdt_a.obj (.text:WDT_A_holdTimer)
+                  00035130    00000014     msp432_startup_ccs.obj (.text:resetISR)
+                  00035144    00000010     pcm.obj (.text:PCM_gotoLPM4)
+                  00035154    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00035162    00000002     --HOLE-- [fill = 0]
+                  00035164    0000000c     pcm.obj (.text:PCM_getPowerState)
+                  00035170    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init)
+                  0003517c    00000008     pcm.obj (.text:PCM_setCoreVoltageLevel)
+                  00035184    00000008     pcm.obj (.text:PCM_setPowerMode)
+                  0003518c    00000008     pcm.obj (.text:PCM_setPowerState)
+                  00035194    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : errno.c.obj (.text:__aeabi_errno_addr)
+                  0003519c    00000004     cpu.obj (.text:CPU_wfi)
+                  000351a0    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  000351a4    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.cinit     0    000351a8    00000060     
+                  000351a8    00000039     (.cinit..data.load) [load image, compression = lzss]
+                  000351e1    00000003     --HOLE-- [fill = 0]
+                  000351e4    0000000c     (__TI_handler_table)
+                  000351f0    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  000351f8    00000010     (__TI_cinit_table)
+
+.bss       0    20000000    00001c09     UNINITIALIZED
+                  20000000    00000800     (.common:data_input)
+                  20000800    00000800     (.common:hann)
+                  20001000    00000400     (.common:adc_inputarray)
+                  20001400    00000400     (.common:data_array1)
+                  20001800    00000400     (.common:data_output)
+                  20001c00    00000008     main.obj (.bss)
+                  20001c08    00000001     (.common:status)
+
+.data      0    20001c0c    00000048     UNINITIALIZED
+                  20001c0c    00000030     gpio.obj (.data:GPIO_PORT_TO_BASE)
+                  20001c3c    00000014     main.obj (.data)
+                  20001c50    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : errno.c.obj (.data)
+
+.stack     0    2000fe00    00000200     UNINITIALIZED
+                  2000fe00    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  2000fe04    000001fc     --HOLE--
+
+MODULE SUMMARY
+
+       Module                       code   ro data   rw data
+       ------                       ----   -------   -------
+    .\
+       main.obj                     572    0         7197   
+       msp432_startup_ccs.obj       26     324       0      
+       periph_config.obj            340    0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       938    324       7197   
+                                                            
+    .\driverlib\MSP432P4xx\
+       pcm.obj                      1176   0         0      
+       cs.obj                       260    0         0      
+       gpio.obj                     140    0         48     
+       flash.obj                    40     0         0      
+       rtc_c.obj                    36     0         0      
+       wdt_a.obj                    24     0         0      
+       cpu.obj                      4      0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       1680   0         48     
+                                                            
+    ../dsplib-msp432.lib
+       arm_common_tables.obj        0      176576    0      
+       arm_rfft_init_q15.obj        196    32768     0      
+       arm_cfft_radix4_q15.obj      1656   0         0      
+       arm_cfft_q15.obj             514    0         0      
+       arm_rfft_q15.obj             454    0         0      
+       arm_const_structs.obj        0      432       0      
+       arm_bitreversal2.obj         192    0         0      
+       arm_max_q15.obj              122    0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       3134   209776    0      
+                                                            
+    C:\ti\ccsv8\tools\compiler\ti-cgt-arm_18.1.1.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       fd_add_t2.asm.obj            438    0         0      
+       fd_mul_t2.asm.obj            252    0         0      
+       s_cosf.c.obj                 180    0         0      
+       memcpy_t2.asm.obj            156    0         0      
+       memset_t2.asm.obj            122    0         0      
+       fd_tos_t2.asm.obj            110    0         0      
+       copy_decompress_lzss.c.obj   104    0         0      
+       autoinit.c.obj               68     0         0      
+       boot_cortex_m.c.obj          56     0         0      
+       fs_tod_t2.asm.obj            56     0         0      
+       e_sqrtf.c.obj                40     0         0      
+       u_tofd_t2.asm.obj            32     0         0      
+       copy_decompress_none.c.obj   14     0         0      
+       copy_zero_init.c.obj         12     0         0      
+       errno.c.obj                  8      0         4      
+       exit.c.obj                   4      0         0      
+       pre_init.c.obj               4      0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       1656   0         4      
+                                                            
+       Stack:                       0      0         512    
+       Linker Generated:            0      93        0      
+    +--+----------------------------+------+---------+---------+
+       Grand Total:                 7408   210193    7761   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 000351f8 records: 2, size/record: 8, table size: 16
+	.data: load addr=000351a8, load size=00000039 bytes, run addr=20001c0c, run size=00000048 bytes, compression=lzss
+	.bss: load addr=000351f0, load size=00000008 bytes, run addr=20000000, run size=00001c09 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 000351e4 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                      
+-------   ----                                      
+00034745  ADC14_IRQHandler                          
+000351a5  C$$EXIT                                   
+0003519d  CPU_wfi                                   
+000341e5  CS_initClockSignal                        
+00035075  CS_setDCOCenteredFrequency                
+00034ffd  FlashCtl_setWaitState                     
+00035099  GPIO_setAsOutputPin                       
+00034e51  GPIO_setAsPeripheralModuleFunctionInputPin
+00035101  GPIO_setOutputLowOnPin                    
+00034fa5  PCM_getCoreVoltageLevel                   
+00034fd1  PCM_getPowerMode                          
+00035165  PCM_getPowerState                         
+00035025  PCM_gotoLPM0                              
+00034c45  PCM_gotoLPM3                              
+00035145  PCM_gotoLPM4                              
+0003517d  PCM_setCoreVoltageLevel                   
+00035185  PCM_setPowerMode                          
+0003518d  PCM_setPowerState                         
+00034ea1  PCM_shutdownDevice                        
+000350bd  RTC_C_holdClock                           
+4000480c  WDTCTL_SYM                                
+00035119  WDT_A_holdTimer                           
+20010000  __STACK_END                               
+00000200  __STACK_SIZE                              
+000351f8  __TI_CINIT_Base                           
+00035208  __TI_CINIT_Limit                          
+000351e4  __TI_Handler_Table_Base                   
+000351f0  __TI_Handler_Table_Limit                  
+00034ef1  __TI_auto_init_nobinit_nopinit            
+00034d97  __TI_decompress_lzss                      
+00035155  __TI_decompress_none                      
+ffffffff  __TI_pprof_out_hndl                       
+ffffffff  __TI_prof_data_size                       
+ffffffff  __TI_prof_data_start                      
+00000000  __TI_static_base__                        
+00035171  __TI_zero_init                            
+00034cbd  __aeabi_d2f                               
+00033b37  __aeabi_dadd                              
+00034003  __aeabi_dmul                              
+00033b2d  __aeabi_dsub                              
+00035195  __aeabi_errno_addr                        
+00034f6d  __aeabi_f2d                               
+00034bcb  __aeabi_memclr                            
+00034bcb  __aeabi_memclr4                           
+00034bcb  __aeabi_memclr8                           
+00034935  __aeabi_memcpy                            
+00034935  __aeabi_memcpy4                           
+00034935  __aeabi_memcpy8                           
+00034bcd  __aeabi_memset                            
+00034bcd  __aeabi_memset4                           
+00034bcd  __aeabi_memset8                           
+000350e1  __aeabi_ui2d                              
+ffffffff  __binit__                                 
+ffffffff  __c_args__                                
+UNDEFED   __mpu_init                                
+2000fe00  __stack                                   
+00034f35  _c_int00_noargs                           
+UNDEFED   _system_post_cinit                        
+000351a1  _system_pre_init                          
+000351a5  abort                                     
+20001000  adc_inputarray                            
+0002cd84  armBitRevIndexTable1024                   
+00032994  armBitRevIndexTable128                    
+00033474  armBitRevIndexTable16                     
+00026044  armBitRevIndexTable2048                   
+00031a94  armBitRevIndexTable256                    
+000332f4  armBitRevIndexTable32                     
+00022144  armBitRevIndexTable4096                   
+00031714  armBitRevIndexTable512                    
+00033214  armBitRevIndexTable64                     
+0002fb94  armBitRevIndexTable_fixed_1024            
+00032f34  armBitRevIndexTable_fixed_128             
+0003349c  armBitRevIndexTable_fixed_16              
+0002be04  armBitRevIndexTable_fixed_2048            
+00032604  armBitRevIndexTable_fixed_256             
+00033414  armBitRevIndexTable_fixed_32              
+000240c4  armBitRevIndexTable_fixed_4096            
+00031354  armBitRevIndexTable_fixed_512             
+00033284  armBitRevIndexTable_fixed_64              
+000344cf  arm_bitreversal_16                        
+00034465  arm_bitreversal_32                        
+00034525  arm_cfft_q15                              
+000347ed  arm_cfft_radix4by2_inverse_q15            
+00034891  arm_cfft_radix4by2_q15                    
+00032844  arm_cfft_sR_f32_len1024                   
+00032814  arm_cfft_sR_f32_len128                    
+000327e4  arm_cfft_sR_f32_len16                     
+00032854  arm_cfft_sR_f32_len2048                   
+00032824  arm_cfft_sR_f32_len256                    
+000327f4  arm_cfft_sR_f32_len32                     
+00032864  arm_cfft_sR_f32_len4096                   
+00032834  arm_cfft_sR_f32_len512                    
+00032804  arm_cfft_sR_f32_len64                     
+00032964  arm_cfft_sR_q15_len1024                   
+00032934  arm_cfft_sR_q15_len128                    
+00032904  arm_cfft_sR_q15_len16                     
+00032974  arm_cfft_sR_q15_len2048                   
+00032944  arm_cfft_sR_q15_len256                    
+00032914  arm_cfft_sR_q15_len32                     
+00032984  arm_cfft_sR_q15_len4096                   
+00032954  arm_cfft_sR_q15_len512                    
+00032924  arm_cfft_sR_q15_len64                     
+000328d4  arm_cfft_sR_q31_len1024                   
+000328a4  arm_cfft_sR_q31_len128                    
+00032874  arm_cfft_sR_q31_len16                     
+000328e4  arm_cfft_sR_q31_len2048                   
+000328b4  arm_cfft_sR_q31_len256                    
+00032884  arm_cfft_sR_q31_len32                     
+000328f4  arm_cfft_sR_q31_len4096                   
+000328c4  arm_cfft_sR_q31_len512                    
+00032894  arm_cfft_sR_q31_len64                     
+00034b51  arm_max_q15                               
+000334b5  arm_radix4_butterfly_inverse_q15          
+000337f1  arm_radix4_butterfly_q15                  
+000343a1  arm_rfft_init_q15                         
+00034d2b  arm_rfft_q15                              
+000342c5  arm_split_rfft_q15                        
+00034a57  arm_split_rifft_q15                       
+ffffffff  binit                                     
+000349d1  configureADC                              
+00034dff  configureClocks                           
+00034ad5  configureGPIO                             
+000345e1  cosf                                      
+20001400  data_array1                               
+20000000  data_input                                
+20001800  data_output                               
+20001c44  doBitReverse                              
+20001c50  errno                                     
+20001c3c  fftSize                                   
+20000800  hann                                      
+20001c40  ifftFlag                                  
+00000000  interruptVectors                          
+00033ce5  main                                      
+00034935  memcpy                                    
+00034bd3  memset                                    
+20001c4a  sampleComplete                            
+20001c48  samplePointer                             
+0003504d  sqrtf                                     
+20001c08  status                                    
+20001c4c  switch_data                               
+00020144  twiddleCoef_1024                          
+0002db94  twiddleCoef_1024_q15                      
+00027e04  twiddleCoef_1024_q31                      
+00030f54  twiddleCoef_128                           
+00032b34  twiddleCoef_128_q15                       
+00031e04  twiddleCoef_128_q31                       
+00033194  twiddleCoef_16                            
+00033444  twiddleCoef_16_q15                        
+00033354  twiddleCoef_16_q31                        
+00016144  twiddleCoef_2048                          
+00029604  twiddleCoef_2048_q15                      
+0001a144  twiddleCoef_2048_q31                      
+0002f394  twiddleCoef_256                           
+00032104  twiddleCoef_256_q15                       
+00030354  twiddleCoef_256_q31                       
+00032e34  twiddleCoef_32                            
+000333b4  twiddleCoef_32_q15                        
+00033014  twiddleCoef_32_q31                        
+00000144  twiddleCoef_4096                          
+0001d144  twiddleCoef_4096_q15                      
+00008144  twiddleCoef_4096_q31                      
+0002ae04  twiddleCoef_512                           
+00030954  twiddleCoef_512_q15                       
+0002e794  twiddleCoef_512_q31                       
+00032404  twiddleCoef_64                            
+000330d4  twiddleCoef_64_q15                        
+00032cb4  twiddleCoef_64_q31                        
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                      
+-------   ----                                      
+00000000  __TI_static_base__                        
+00000000  interruptVectors                          
+00000144  twiddleCoef_4096                          
+00000200  __STACK_SIZE                              
+00008144  twiddleCoef_4096_q31                      
+00016144  twiddleCoef_2048                          
+0001a144  twiddleCoef_2048_q31                      
+0001d144  twiddleCoef_4096_q15                      
+00020144  twiddleCoef_1024                          
+00022144  armBitRevIndexTable4096                   
+000240c4  armBitRevIndexTable_fixed_4096            
+00026044  armBitRevIndexTable2048                   
+00027e04  twiddleCoef_1024_q31                      
+00029604  twiddleCoef_2048_q15                      
+0002ae04  twiddleCoef_512                           
+0002be04  armBitRevIndexTable_fixed_2048            
+0002cd84  armBitRevIndexTable1024                   
+0002db94  twiddleCoef_1024_q15                      
+0002e794  twiddleCoef_512_q31                       
+0002f394  twiddleCoef_256                           
+0002fb94  armBitRevIndexTable_fixed_1024            
+00030354  twiddleCoef_256_q31                       
+00030954  twiddleCoef_512_q15                       
+00030f54  twiddleCoef_128                           
+00031354  armBitRevIndexTable_fixed_512             
+00031714  armBitRevIndexTable512                    
+00031a94  armBitRevIndexTable256                    
+00031e04  twiddleCoef_128_q31                       
+00032104  twiddleCoef_256_q15                       
+00032404  twiddleCoef_64                            
+00032604  armBitRevIndexTable_fixed_256             
+000327e4  arm_cfft_sR_f32_len16                     
+000327f4  arm_cfft_sR_f32_len32                     
+00032804  arm_cfft_sR_f32_len64                     
+00032814  arm_cfft_sR_f32_len128                    
+00032824  arm_cfft_sR_f32_len256                    
+00032834  arm_cfft_sR_f32_len512                    
+00032844  arm_cfft_sR_f32_len1024                   
+00032854  arm_cfft_sR_f32_len2048                   
+00032864  arm_cfft_sR_f32_len4096                   
+00032874  arm_cfft_sR_q31_len16                     
+00032884  arm_cfft_sR_q31_len32                     
+00032894  arm_cfft_sR_q31_len64                     
+000328a4  arm_cfft_sR_q31_len128                    
+000328b4  arm_cfft_sR_q31_len256                    
+000328c4  arm_cfft_sR_q31_len512                    
+000328d4  arm_cfft_sR_q31_len1024                   
+000328e4  arm_cfft_sR_q31_len2048                   
+000328f4  arm_cfft_sR_q31_len4096                   
+00032904  arm_cfft_sR_q15_len16                     
+00032914  arm_cfft_sR_q15_len32                     
+00032924  arm_cfft_sR_q15_len64                     
+00032934  arm_cfft_sR_q15_len128                    
+00032944  arm_cfft_sR_q15_len256                    
+00032954  arm_cfft_sR_q15_len512                    
+00032964  arm_cfft_sR_q15_len1024                   
+00032974  arm_cfft_sR_q15_len2048                   
+00032984  arm_cfft_sR_q15_len4096                   
+00032994  armBitRevIndexTable128                    
+00032b34  twiddleCoef_128_q15                       
+00032cb4  twiddleCoef_64_q31                        
+00032e34  twiddleCoef_32                            
+00032f34  armBitRevIndexTable_fixed_128             
+00033014  twiddleCoef_32_q31                        
+000330d4  twiddleCoef_64_q15                        
+00033194  twiddleCoef_16                            
+00033214  armBitRevIndexTable64                     
+00033284  armBitRevIndexTable_fixed_64              
+000332f4  armBitRevIndexTable32                     
+00033354  twiddleCoef_16_q31                        
+000333b4  twiddleCoef_32_q15                        
+00033414  armBitRevIndexTable_fixed_32              
+00033444  twiddleCoef_16_q15                        
+00033474  armBitRevIndexTable16                     
+0003349c  armBitRevIndexTable_fixed_16              
+000334b5  arm_radix4_butterfly_inverse_q15          
+000337f1  arm_radix4_butterfly_q15                  
+00033b2d  __aeabi_dsub                              
+00033b37  __aeabi_dadd                              
+00033ce5  main                                      
+00034003  __aeabi_dmul                              
+000341e5  CS_initClockSignal                        
+000342c5  arm_split_rfft_q15                        
+000343a1  arm_rfft_init_q15                         
+00034465  arm_bitreversal_32                        
+000344cf  arm_bitreversal_16                        
+00034525  arm_cfft_q15                              
+000345e1  cosf                                      
+00034745  ADC14_IRQHandler                          
+000347ed  arm_cfft_radix4by2_inverse_q15            
+00034891  arm_cfft_radix4by2_q15                    
+00034935  __aeabi_memcpy                            
+00034935  __aeabi_memcpy4                           
+00034935  __aeabi_memcpy8                           
+00034935  memcpy                                    
+000349d1  configureADC                              
+00034a57  arm_split_rifft_q15                       
+00034ad5  configureGPIO                             
+00034b51  arm_max_q15                               
+00034bcb  __aeabi_memclr                            
+00034bcb  __aeabi_memclr4                           
+00034bcb  __aeabi_memclr8                           
+00034bcd  __aeabi_memset                            
+00034bcd  __aeabi_memset4                           
+00034bcd  __aeabi_memset8                           
+00034bd3  memset                                    
+00034c45  PCM_gotoLPM3                              
+00034cbd  __aeabi_d2f                               
+00034d2b  arm_rfft_q15                              
+00034d97  __TI_decompress_lzss                      
+00034dff  configureClocks                           
+00034e51  GPIO_setAsPeripheralModuleFunctionInputPin
+00034ea1  PCM_shutdownDevice                        
+00034ef1  __TI_auto_init_nobinit_nopinit            
+00034f35  _c_int00_noargs                           
+00034f6d  __aeabi_f2d                               
+00034fa5  PCM_getCoreVoltageLevel                   
+00034fd1  PCM_getPowerMode                          
+00034ffd  FlashCtl_setWaitState                     
+00035025  PCM_gotoLPM0                              
+0003504d  sqrtf                                     
+00035075  CS_setDCOCenteredFrequency                
+00035099  GPIO_setAsOutputPin                       
+000350bd  RTC_C_holdClock                           
+000350e1  __aeabi_ui2d                              
+00035101  GPIO_setOutputLowOnPin                    
+00035119  WDT_A_holdTimer                           
+00035145  PCM_gotoLPM4                              
+00035155  __TI_decompress_none                      
+00035165  PCM_getPowerState                         
+00035171  __TI_zero_init                            
+0003517d  PCM_setCoreVoltageLevel                   
+00035185  PCM_setPowerMode                          
+0003518d  PCM_setPowerState                         
+00035195  __aeabi_errno_addr                        
+0003519d  CPU_wfi                                   
+000351a1  _system_pre_init                          
+000351a5  C$$EXIT                                   
+000351a5  abort                                     
+000351e4  __TI_Handler_Table_Base                   
+000351f0  __TI_Handler_Table_Limit                  
+000351f8  __TI_CINIT_Base                           
+00035208  __TI_CINIT_Limit                          
+20000000  data_input                                
+20000800  hann                                      
+20001000  adc_inputarray                            
+20001400  data_array1                               
+20001800  data_output                               
+20001c08  status                                    
+20001c3c  fftSize                                   
+20001c40  ifftFlag                                  
+20001c44  doBitReverse                              
+20001c48  samplePointer                             
+20001c4a  sampleComplete                            
+20001c4c  switch_data                               
+20001c50  errno                                     
+2000fe00  __stack                                   
+20010000  __STACK_END                               
+4000480c  WDTCTL_SYM                                
+ffffffff  __TI_pprof_out_hndl                       
+ffffffff  __TI_prof_data_size                       
+ffffffff  __TI_prof_data_start                      
+ffffffff  __binit__                                 
+ffffffff  __c_args__                                
+ffffffff  binit                                     
+UNDEFED   __mpu_init                                
+UNDEFED   _system_post_cinit                        
+
+[167 symbols]

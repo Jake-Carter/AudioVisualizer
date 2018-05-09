@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?ccsproject version="1.0"?>
+<projectOptions>
+	<ccsVersion value="8.0.0"/>
+	<deviceVariant value="MSP432P401R"/>
+	<deviceFamily value="MSP432"/>
+	<deviceEndianness value="little"/>
+	<codegenToolVersion value="18.1.1.LTS"/>
+	<isElfFormat value="true"/>
+	<linkerCommandFile value="msp432p401r.cmd"/>
+	<rts value="libc.a"/>
+	<createSlaveProjects value=""/>
+	<ignoreDefaultDeviceSettings value="true"/>
+	<templateProperties value="id=BOOSTXL-EDUMKII_MicrophoneFFT_MSP432P401R.projectspec.BOOSTXL-EDUMKII_MicrophoneFFT_MSP432P401R,"/>
+	<origin value="C:\Users\Jake\Desktop\slaa707\SLAA707_Software_01_00_00_00\BOOSTXL-EDUMKII_MicrophoneFFT_MSP432P401R\CCS\BOOSTXL-EDUMKII_MicrophoneFFT_MSP432P401R.projectspec"/>
+	<filesToOpen value="main.c,"/>
+	<connection value="common/targetdb/connections/TIXDS110_Connection.xml"/>
+	<isTargetManual value="false"/>
+</projectOptions>
