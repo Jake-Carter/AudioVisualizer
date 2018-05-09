@@ -9,7 +9,6 @@
 #include "arm_math.h"
 #include "arm_const_structs.h"
 #include "periph_config.h"
-#include "circBuf.h"
 #include "uart.h"
 
 #define SAMPLE_LENGTH 512
